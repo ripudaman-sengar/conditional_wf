@@ -42,8 +42,8 @@ jobs:
           name: test-report
           path: test.json
   build:
+    needs: test
     runs-on: ubuntu-latest
-    if: failure() == 'true'
     steps:
       - name: Get code
         uses: actions/checkout@v3
