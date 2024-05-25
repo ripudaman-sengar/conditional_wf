@@ -43,7 +43,7 @@ jobs:
           path: test.json
   build:
     runs-on: ubuntu-latest
-    if: failure() == 'false'
+    if: failure() == 'true'
     steps:
       - name: Get code
         uses: actions/checkout@v3
