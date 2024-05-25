@@ -42,7 +42,7 @@ jobs:
           name: test-report
           path: test.json
       - name: resusable workflow test
-        uses: ./report-flows.yml
+        uses: ./.github/workflows/report-flows.yml
 
   build:
     needs: test
