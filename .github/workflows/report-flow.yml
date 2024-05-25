@@ -1,8 +1,20 @@
 name: run when test fails
-on: workflow_call
+on: 
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: the name of of artifact file
+        required: true
+        type: string
 jobs:
   report:
     runs-on: ubuntu-latest
     steps:
+      - name: download artifact files
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{inputs.artifact-name}}
+      - name: list files
+        run: ls
       - name: report the failure
         run: echo "worklfow executed"

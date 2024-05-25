@@ -46,6 +46,8 @@ jobs:
     needs: test
     if: failure()
     uses: ./.github/workflows/report-flow.yml
+    with:
+      artifact-name: test-report
   build:
     needs: test
     runs-on: ubuntu-latest
