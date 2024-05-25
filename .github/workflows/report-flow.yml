@@ -1,0 +1,8 @@
+name: run when test fails
+on: workflow_call
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: report the failure
+        run: echo "worklfow executed"

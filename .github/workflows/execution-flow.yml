@@ -41,6 +41,9 @@ jobs:
         with:
           name: test-report
           path: test.json
+      - name: resusable workflow test
+        uses: ./.github/workflows/report-flows.yml
+
   build:
     needs: test
     runs-on: ubuntu-latest
