@@ -43,6 +43,7 @@ jobs:
           path: test.json
 
   report:
+    needs: test
     if: failure()
     uses: ./.github/workflows/report-flow.yml
   build:
